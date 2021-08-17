@@ -39,7 +39,8 @@ function Panel(props){
                 <button className="btn border border-success p-3 m-2 rounded fs-4"
                 onClick={(e) => {
                     try { 
-                    handleAns(String((input)));
+                        
+                        handleAns( Function ('"use strict";return '+ input) () );
                     } catch (e) {
                     console.log(e);
                     }
