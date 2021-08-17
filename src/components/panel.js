@@ -36,8 +36,9 @@ function Panel(props){
             
                 <button className="btn border border-success p-3 m-2 rounded fs-4"
                 onClick={(e) => {
-                    try {                         
-                        handleAns(this.eval(input));
+                    try {      
+                        /* eslint no-eval: 0 */            
+                        handleAns(eval(input));
                     } catch (e) {
                     console.log(e);
                     }
