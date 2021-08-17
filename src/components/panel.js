@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-
-
 function Panel(props){
     const [input,setInput] = useState(()=>(' '))
     const [answer,setAnswer] = useState(()=>(' '))
@@ -12,7 +10,7 @@ function Panel(props){
    const handleAns = (e) =>{
        props.Ans(e)
    }
-
+  
     return(
      <div className="justify-content-md-center d-flex">
         <div className="d-grid">
@@ -38,9 +36,8 @@ function Panel(props){
             
                 <button className="btn border border-success p-3 m-2 rounded fs-4"
                 onClick={(e) => {
-                    try { 
-                        
-                        handleAns( Function ('"use strict";return '+ input) () );
+                    try {                         
+                        handleAns(this.eval(input));
                     } catch (e) {
                     console.log(e);
                     }
